@@ -1,0 +1,62 @@
+#content
+  #slider
+    - images.each do |image|
+      %img{:alt => "", :src => image}
+
+  #htmlcaption.nivo-html-caption
+    %strong This
+    is an example of a
+    %em HTML
+    caption with
+    = succeed "." do
+      %a{:href => "#"} a link
+
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
+%script{:src => "javascripts/jquery.nivo.slider.js", :type => "text/javascript"}
+
+:javascript
+  // $('#slider').data('nivo:vars').stop = true; //Stop the Slider
+  // $('#slider').data('nivo:vars').stop = false; //Start the Slider
+
+  $(window).load(function() {
+    // $('#slider').nivoSlider();
+
+    $('#slider').nivoSlider({
+          // pauseTime:5000,
+          pauseOnHover:false,
+          controlNavThumbs:true
+        });
+    // $('#slider').nivoSlider({
+    // 	effect:'random', //Specify sets like: 'fold,fade,sliceDown'
+    // 	slices:15,
+    // 	animSpeed:500, //Slide transition speed
+    // 	pauseTime:3000,
+    // 	startSlide:0, //Set starting Slide (0 index)
+    // 	directionNav:true, //Next & Prev
+    // 	directionNavHide:true, //Only show on hover
+    // 	controlNav:true, //1,2,3...
+    // 	controlNavThumbs:true, //Use thumbnails for Control Nav
+    // 	      controlNavThumbsFromRel:false, //Use image rel for thumbs
+    // 	controlNavThumbsSearch: '.jpg', //Replace this with...
+    // 	controlNavThumbsReplace: '_thumb.jpg', //...this in thumb Image src
+    // 	keyboardNav:true, //Use left & right arrows
+    // 	pauseOnHover:true, //Stop animation while hovering
+    // 	manualAdvance:false, //Force manual transitions
+    // 	captionOpacity:0.8, //Universal caption opacity
+    // 	beforeChange: function(){},
+    // 	afterChange: function(){},
+    // 	slideshowEnd: function(){} //Triggers after all slides have been shown
+    // });
+
+  });
+
+  $(document).ready(function() {
+    // $('#download-form input:radio').change(function(){
+    // 	var url = $('#download-form input:radio:checked').val();
+    // 	$('#download-btn').attr('href', url);
+    // });
+    //
+    // $('a#download-jump').click(function(){
+    // 	$(window).scrollTo($('a[name="download"]'), 1000);
+    // });
+  });
